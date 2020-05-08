@@ -1,0 +1,43 @@
+// Common styles
+
+div[class^="container-"] {
+  display: block;
+  margin: 5px;
+}
+
+.box {
+  display: inline-block;
+  text-align: center;
+  padding: 25;
+  border-radius: 5px;
+}
+
+.color-box-text {
+  color: white;
+}
+
+// Color palette
+
+$colors: (
+  1: #01579b,
+  2: #8f6fa5,
+  3: #96bf67,
+);
+
+@each $key, $baseColor in $colors {
+  .container-#{$key} {
+    .base-color {
+      background-color: $baseColor;
+    }
+
+    @for $i from 1 through 4 {
+      $percent: $i * 10%;
+      .darken-#{$i} {
+        background-color: darken($baseColor, $percent);
+      }
+      .lighten-#{$i} {
+        background-color: lighten($baseColor, $percent);
+      }
+    }
+  }
+}
