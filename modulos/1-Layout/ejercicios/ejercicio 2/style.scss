@@ -1,0 +1,32 @@
+@import "themes/theme1";
+
+body {
+  font-family: $mainFont, sans-serif;
+}
+
+.box {
+  width: 100px;
+  height: 55px;
+  border-width: 1px;
+  border-color: grey;
+  border-style: solid;
+  font-weight: bold;
+  padding: 10px;
+
+  &.base {
+    background-color: $baseColor;
+  }
+  &.warning {
+    background-color: lighten($baseColor, 10%);
+  }
+  &.important {
+    background-color: darken($baseColor, 10%);
+  }
+}
+
+.container {
+  margin: 5px;
+}
+.secondary {
+  font-family: $secondaryFont, sans-serif;
+}
