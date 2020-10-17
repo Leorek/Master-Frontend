@@ -5,11 +5,11 @@ const path = require("path");
 const basePath = __dirname;
 
 module.exports = {
-  context: path.join(basePath, "src"),
+  context: path.join(basePath, "../src"),
   resolve: { extensions: [".js", ".ts", ".tsx"] },
   entry: {
-    app: "./src/index.tsx",
-    appStyles: ["./src/style.scss"],
+    app: "./index.tsx",
+    appStyles: ["./style.scss"],
   },
   output: {
     filename: "[name].[chunkhash].js",
@@ -54,7 +54,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "./src/index.html",
+      template: "./index.html",
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",

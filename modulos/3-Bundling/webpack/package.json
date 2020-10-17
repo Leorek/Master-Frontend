@@ -5,21 +5,26 @@
   "license": "MIT",
   "scripts": {
     "start": "run-p -l type-check:watch start:dev",
-    "start:dev": "webpack-dev-server --open --config webpack.dev.js",
-    "start:prod": "webpack-dev-server --open --config webpack.prod.js",
+    "start:dev": "webpack-dev-server --open --config webpackConfigs/webpack.dev.js",
+    "start:prod": "webpack-dev-server --open --config webpackConfigs/webpack.prod.js",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "build:dev": "rimraf dist && webpack --config webpack.dev.js",
-    "build:prod": "rimraf dist && webpack --config webpack.prod.js",
-    "build:perf": "rimraf dist && webpack --config webpack.perf.js"
+    "build:dev": "rimraf dist && webpack --config webpackConfigs/webpack.dev.js",
+    "build:prod": "rimraf dist && webpack --config webpackConfigs/webpack.prod.js",
+    "build:perf": "rimraf dist && webpack --config webpackConfigs/webpack.perf.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.3.0",
     "dotenv-webpack": "^3.0.0",

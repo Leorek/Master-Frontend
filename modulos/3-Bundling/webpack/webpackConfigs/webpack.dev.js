@@ -1,6 +1,6 @@
-const merge = require("webpack-merge");
-const common = require("./webpack.common");
+const { merge } = require("webpack-merge");
 const Dotenv = require("dotenv-webpack");
+const common = require("./webpack.common");
 
 module.exports = merge(common, {
   mode: "development",
@@ -8,7 +8,7 @@ module.exports = merge(common, {
   stats: "errors-only",
   plugins: [
     new Dotenv({
-      path: "./dev.env",
+      path: "./env/dev.env",
     }),
   ],
 });
