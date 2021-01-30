@@ -6,6 +6,7 @@ import { DetailPage } from "./detail";
 
 export const App = () => {
   const [organization, setOrganization] = useState("lemoncode");
+  const [organizationPage, setOrganizationPage] = useState(1);
 
   return (
     <Router>
@@ -17,6 +18,8 @@ export const App = () => {
           <ListPage
             organization={organization}
             updateOrganization={setOrganization}
+            organizationPage={organizationPage}
+            updateOrganizationPage={setOrganizationPage}
           />
         </Route>
         <Route path="/detail/:id">
